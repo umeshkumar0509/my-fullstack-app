@@ -13,11 +13,11 @@ app.use(express.json());
 app.use('/api', require('./routes/api'));
 
 // Serve static files from React build
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../test-mail/build')));
 
 // Catch all handler: send back React's index.html file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../test-mail/build/index.html'));
 });
 
 app.listen(PORT, () => {
